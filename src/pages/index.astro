@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Header } from '../components/Header';
+import { Paragraphs } from '../components/Paragraphs';
+import { CTAButton } from '../components/CTAButton';
+import { Slider } from '../components/Slider';
+const BlogPosts = [
+  {
+    title: "5 Ways AI-Powered Text Analysis Can Boost Your Team's Productivity",
+    summary:
+      "Are you looking for ways to improve communication and collaboration within your team? One solution is to use AI-powered text analysis in Slack. In this blog post, we'll explore 5 ways that this technology can help you get more done and make better decisions.",
+  },
+  {
+    title: "Text Analysis in Slack: A Game-Changer for Remote Teams",
+    summary:
+      "Remote work has become the norm for many teams, and effective communication is more important than ever. Text analysis in Slack can help remote teams stay connected and on track by providing features like keyword extraction, sentiment analysis, and automatic summarization.",
+  },
+  {
+    title: "How to Use Text Analysis in Slack to Improve Your Meetings",
+    summary:
+      "Meetings can be a major time sink, but using text analysis in Slack can help you make the most of your time together. From automatic meeting summaries to sentiment analysis of team feedback, this technology has the power to transform your meetings into more productive and efficient gatherings.",
+  },
+  {
+    title: "10 Cool Things You Can Do with Text Analysis in Slack",
+    summary:
+      "Text analysis in Slack is more than just a tool for summarizing conversations. In this blog post, we'll share 10 creative ways that you can use this technology to improve your team's communication and collaboration. From language detection to named entity recognition, there are endless possibilities for what you can do with text analysis in Slack.",
+  },
+];
+---
+
+<Layout title="Welcome to Astro.">
+		<div class="container mx-auto">
+			<Header />
+			{/* <HeroBanner /> */}
+			<h1 class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text p-4 text-center text-5xl font-bold text-transparent">
+				Revolutionizing the way you do business
+			</h1>
+
+			<Paragraphs />
+			<div class="flex justify-center p-2">
+				<CTAButton text="Get Started" />
+			</div>
+			<div class="p-4">
+				<Slider client:load posts={BlogPosts} />
+			</div>
+		</div>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+	.instructions code {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent), 12%);
+		color: rgb(var(--accent));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>
