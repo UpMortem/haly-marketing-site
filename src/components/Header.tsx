@@ -2,16 +2,18 @@ export const Header = () => {
   return (
     <header className="flex items-center justify-between p-6 text-gray-600">
       <div className="flex items-center">
-        <h1 className="ml-2 text-2xl font-bold">Haly</h1>
+        <a href="#">
+          <h1 className="text-2xl font-bold">Haly</h1>
+        </a>
       </div>
       <nav className="flex justify-center">
-        <a href="#" className="px-4 text-xl font-semibold leading-tight">
+        <a href="#" className="px-4 text-lg font-semibold leading-tight hover:text-gray-800 transition duration-150 ease-in-out">
           Home
         </a>
-        <a href="#" className="px-4 text-xl font-semibold leading-tight">
+        <a href="#" className="px-4 text-lg font-semibold leading-tight hover:text-gray-800 transition duration-150 ease-in-out">
           Use Cases
         </a>
-        <a href="#" className="px-4 text-xl font-semibold leading-tight">
+        <a href="#" className="px-4 text-lg font-semibold leading-tight hover:text-gray-800 transition duration-150 ease-in-out">
           Blog
         </a>
       </nav>
