@@ -14,12 +14,22 @@ type PostSummary = {
 export const Slider = ({ posts }: { posts: PostSummary[] }) => {
   return (
     <Swiper
-      slidesPerView={2}
+      slidesPerView={1}
       spaceBetween={30}
       loop={true}
       modules={[Pagination, Navigation]}
       className="mySwiper"
       navigation={true}
+      breakpoints={{
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+      }}
     >
       {posts.map((post, index) => (
         <SwiperSlide key={index}>

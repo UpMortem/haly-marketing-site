@@ -1,6 +1,6 @@
 export const Paragraphs = () => {
   return (
-    <div className="pt-12">
+    <div className="pt-4">
       <div className="container mx-auto px-4 lg:px-0">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
           <div className="mx-auto my-4 rounded-xl bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 p-1">
