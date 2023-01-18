@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Header } from '../components/Header';
-import { Paragraphs } from '../components/Paragraphs';
-import { CTAButton } from '../components/CTAButton';
-import { Slider } from '../components/Slider';
-import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import { Paragraphs } from "../components/Paragraphs";
+import { CTAButton } from "../components/CTAButton";
+import { Slider } from "../components/Slider";
+import Footer from "../components/Footer.astro";
 const BlogPosts = [
   {
     title: "5 Ways AI-Powered Text Analysis Can Boost Your Team's Productivity",
@@ -27,68 +27,71 @@ const BlogPosts = [
       "Text analysis in Slack is more than just a tool for summarizing conversations. In this blog post, we'll share 10 creative ways that you can use this technology to improve your team's communication and collaboration. From language detection to named entity recognition, there are endless possibilities for what you can do with text analysis in Slack.",
   },
 ];
+
+const pageTitle = "Haly";
 ---
 
-<Layout title="Haly">
-		<div class="container mx-auto">
-			<Header />
-			{/* <HeroBanner /> */}
-			<h1 class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text p-4 text-center text-5xl font-bold text-transparent">
-				Elevate your Slack game with advanced text analysis features
-			</h1>
+<BaseLayout title={pageTitle}>
+  <div class="container mx-auto">
+    {/* <HeroBanner /> */}
+    <h1
+      class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text p-4 text-center text-5xl font-bold text-transparent"
+    >
+      Elevate your Slack game with advanced text analysis features
+    </h1>
 
-			<Paragraphs />
-			<div class="flex justify-center p-2">
-				<CTAButton text="Get Started" />
-			</div>
-			<div class="p-4">
-				<Slider client:load posts={BlogPosts} />
-			</div>
-		</div>
-		<Footer />
-</Layout>
+    <!-- <Paragraphs />
+    <div class="flex justify-center p-2">
+      <CTAButton text="Get Started" />
+    </div>
+    <div class="p-4">
+      <Slider client:load posts={BlogPosts} />
+    </div>
+  </div> -->
+  </div>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+  <style>
+    main {
+      margin: auto;
+      padding: 1.5rem;
+      max-width: 60ch;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 0;
+    }
+    .text-gradient {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      background-position: 0%;
+    }
+    .instructions {
+      line-height: 1.6;
+      margin: 1rem 0;
+      border: 1px solid rgba(var(--accent), 25%);
+      background-color: white;
+      padding: 1rem;
+      border-radius: 0.4rem;
+    }
+    .instructions code {
+      font-size: 0.875em;
+      font-weight: bold;
+      background: rgba(var(--accent), 12%);
+      color: rgb(var(--accent));
+      border-radius: 4px;
+      padding: 0.3em 0.45em;
+    }
+    .instructions strong {
+      color: rgb(var(--accent));
+    }
+    .link-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+      gap: 1rem;
+      padding: 0;
+    }
+  </style>
+</BaseLayout>
