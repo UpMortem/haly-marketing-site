@@ -1,4 +1,5 @@
 ---
+import { socials } from "../data/socials";
 import { Icon } from "astro-icon";
 ---
 
@@ -12,25 +13,17 @@ import { Icon } from "astro-icon";
         <h5 class="text-lg mt-0 mb-2 text-gray-600">
           Find us on any of these platforms.
         </h5>
-        <div class="mt-6 md:mb-0 mb-6">
-          <button
-            class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-            type="button"
-          >
-            <Icon
-              class="p-1"
-              color="#1DA1F2"
-              pack="mdi"
-              name="twitter"
-            /></button
-          >
-          <button
-            class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-            type="button"
-          >
-            <Icon class="p-1" pack="bi" name="medium" /></button
-          >
-        </div>
+        <ul class="mt-6 md:mb-0 mb-6 list-reset flex flex-row">
+          {
+            socials.map((social) => (
+              <li class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2">
+                <a href={social.url} target="_blank">
+                  <Icon name={social.icon} class="p-1" color="#1DA1F2" />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </div>
       <div class="w-full md:w-6/12 px-4">
         <div class="flex flex-wrap items-top mb-6">
@@ -63,7 +56,7 @@ import { Icon } from "astro-icon";
               <li>
                 <a
                   class="text-gray-600 hover:text-gray-800 transition duration-150 ease-in-out font-semibold block pb-2 text-sm"
-                  href="#">Terms &amp; Conditions</a
+                  href="/other_resources/conditions">Terms &amp; Conditions</a
                 >
               </li>
               <li>
