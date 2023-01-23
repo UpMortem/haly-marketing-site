@@ -12,7 +12,7 @@ export const socials = [
   {
     title: "LinkedIn",
     icon: "mdi:linkedin",
-    url: "https://www.linkedin.com/in/navraj-chohan-phd-84a61b26/",
+    url: "https://www.linkedin.com/company/upmortem/",
   },
   {
     title: "Reddit",
